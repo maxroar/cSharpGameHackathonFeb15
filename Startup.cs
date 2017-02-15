@@ -11,6 +11,8 @@ namespace fightingGame
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddSingleton<Fighter>();
+            services.AddSingleton<Enemy>();
             services.AddMvc();
             services.AddSession();
         }

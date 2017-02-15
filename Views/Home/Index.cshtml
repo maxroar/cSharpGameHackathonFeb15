@@ -1,5 +1,43 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-<h1>Default Blank Page~</h1>
-<p>Get to adding stuff</p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <h2>Enemy!</h2>
+            <div class="row">
+                <div class="col-xs-4 col-xs-offset-2">Health: @ViewBag.enemyHealth</div>
+                <div class="col-xs-4">Energy: @ViewBag.enemyEnergy</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <h3>@ViewBag.message</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <h2>Player!</h2>
+            <div class="row">
+                <div class="col-xs-4">Health: @ViewBag.playerHealth</div>
+                <div class="col-xs-4">Energy: @ViewBag.playerEnergy</div>
+                <div class="col-xs-4">Food: @ViewBag.playerFood</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3">
+                    <form action="/attack" method="post"><input type="submit" class="btn" value="Attack"></form>
+                </div>
+                <div class="col-xs-3">
+                    <form action="/heal" method="post"><input type="submit" class="btn" value="Heal"></form>
+                </div>
+                <div class="col-xs-3">
+                    <form action="/bigAttack" method="post"><input type="submit" class="btn" value="Big Attack"></form>
+                </div>
+                <div class="col-xs-3">
+                    <form action="/eat" method="post"><input type="submit" class="btn" value="Eat"></form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
