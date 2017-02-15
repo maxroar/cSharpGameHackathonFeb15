@@ -10,6 +10,24 @@ namespace fightingGame
         public int food {get; set;}
         public string name {get; set;}
         public int strength {get; set;}
+        public int level {get;set;}
+
+        public Fighter(string name){
+            this.name = name;
+            health = 100;
+            energy = 10;
+            food = 3;
+            strength = 0;
+            level = 1;
+        }
+
+        public void SetStrength(){
+            strength = (int)Math.Floor((double)level/2);
+        }
+        public void LevelUp(){
+            level ++;
+            SetStrength();
+        }
 
         public static int AttackAmount(int strength){
             Random rand = new Random();
